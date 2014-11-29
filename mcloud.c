@@ -17,3 +17,5 @@ struct catalogo
   char portada[20];
   char cancion[5][20]; // arreglo de 5 canciones de 20 caracteres de largo
 } disco, lista[100];
+
+char fecha[20];
