@@ -121,7 +121,7 @@ accesoadmin(char usuario[], char contrasena[])
   char passwordcorrect[20];
   accesoa = fopen("accesoadmin.dat", "rb");
   fscanf(accesoa, "%s", admincorrect);
-  fscanf(acceso, "%s", passwordcorrect);
+  fscanf(accesoa, "%s", passwordcorrect);
   
   
 }
