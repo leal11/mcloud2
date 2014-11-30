@@ -42,7 +42,7 @@ int main()
   return 0;
 }
 
-void registroa(int accion, int numerocatalogo, char fechare[]);
+void registroa(int accion, int numerocatalogo, char fechare[])
 {
  FILE* archivor;
  archivor = fopen("registroa.txt", "a+");
@@ -124,7 +124,6 @@ bitacora(char user[], char escuchada[])
   
   fprintf(archivobitacora,"El usuario %s ha escuchado la canción %s\n", user, escuchada);
   fclose(archivobitacora);
-  
 }
 int accesoadmin(char usuario[], char contrasena[])
 {
@@ -142,6 +141,7 @@ int accesoadmin(char usuario[], char contrasena[])
   {
     return 0;
   }
+  fclose(accesoa);
 }
 
 int accesouser(char nick[], char pass[])
@@ -155,7 +155,7 @@ int accesouser(char nick[], char pass[])
  fseek(accesou, 0, SEEK_SET);
  for (cont = 0; cont < size; cont++)
  {
-    fread(&nuevousuario, sizeof(nuevousuario), accesou);
+    fread(&nuevousuario, sizeof(nuevousuario), 1, accesou);
     if (strcmp(nuevousuario.nickname, nick) == 0 && strcmp(nuevousuario.password, pass) == 0)
     {
       flag = 1;
@@ -178,7 +178,7 @@ void altausuario(void)
   gets(nuevousuario.correo);
   
   adduser = fopen("accesousuarios.dat", "ab");
-  fwrite(&nuevousuario, sizeof(nuevousuario), adduser);
+  fwrite(&nuevousuario, sizeof(nuevousuario), 1, adduser);
   fclose(adduser);
   
 }
