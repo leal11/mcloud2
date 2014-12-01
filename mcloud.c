@@ -16,7 +16,7 @@ void baja(void);
 void altausuario(void);
 void bitacora(char useraction[], char escuchada[]);
 int accesoadmin(char usuario[], char contrasena[]);
-int accesouser(char nickname[], char pass[]);
+int accesouser(char nick[], char pass[]);
 struct catalogo
 {
   int numero;
