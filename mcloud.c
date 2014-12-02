@@ -11,12 +11,13 @@ los archivos, manejaríamos muchos.
 #include <time.h>
 #include <stdlib.h>
 #include <string.h>
+int sort_function(const void* a, const void* b);
 void registroa(int accion, int numerocatalogo, char fechare[]);
 void baja(void);
 void altausuario(void);
 void bitacora(char useraction[], char escuchada[]);
 int accesoadmin(char usuario[], char contrasena[]);
-int accesouser(char nick[], char pass[]);
+int accesouser(char nickname[], char pass[]);
 struct catalogo
 {
   int numero;
@@ -41,7 +42,15 @@ int main()
   
   return 0;
 }
-
+int sort_function(const void* a, const void* b)
+{
+  return (strcmp((char*)a, (char*)b));
+}
+void ordenar(char acomodar[][], struct catalogo acervo[])
+{
+  
+  
+}
 void registroa(int accion, int numerocatalogo, char fechare[])
 {
  FILE* archivor;
@@ -182,3 +191,4 @@ void altausuario(void)
   fclose(adduser);
   
 }
+void ordenar()
