@@ -12,6 +12,7 @@ los archivos, manejaríamos muchos.
 #include <stdlib.h>
 #include <string.h>
 int sort_function(const void* a, const void* b);
+void ordenar(char acomodar[][], struct catalogo acervo[], int size);
 void registroa(int accion, int numerocatalogo, char fechare[]);
 void baja(void);
 void altausuario(void);
@@ -46,7 +47,7 @@ int sort_function(const void* a, const void* b)
 {
   return (strcmp((char*)a, (char*)b));
 }
-void ordenar(char acomodar[][], struct catalogo acervo[])
+void ordenar(char acomodar[][], struct catalogo acervo[], int size)
 {
   
   
@@ -189,6 +190,4 @@ void altausuario(void)
   adduser = fopen("accesousuarios.dat", "ab");
   fwrite(&nuevousuario, sizeof(nuevousuario), 1, adduser);
   fclose(adduser);
-  
 }
-void ordenar()
